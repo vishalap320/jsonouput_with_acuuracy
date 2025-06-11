@@ -1,10 +1,18 @@
 import os
 import json
 from groq import Groq
+from dotenv import load_dotenv
 
-# Set your Groq API key here directly or via environment variable
-GROQ_API_KEY = os.getenv("GROQ_API_KEY") or "your-groq-api-key-here"
+# Load .env file if it exists
+load_dotenv()
 
+# Fetch the Groq API Key
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+
+if not GROQ_API_KEY:
+    raise ValueError("Missing GROQ_API_KEY! Make sure it's set in the .env file or your environment.")
+
+# Initialize the Groq client
 client = Groq(api_key=GROQ_API_KEY)
 
 def generate_structured_output(user_input):
@@ -58,7 +66,7 @@ Only output valid JSON — no commentary, no extra text.
         max_tokens=2048
     )
 
-    return response.choices[0].message.content
+    return response.choices[0].message.content.strip()
 
 if __name__ == "__main__":
     user_input = input("Enter your stream-of-consciousness journal entry:\n\n")
@@ -68,7 +76,8 @@ if __name__ == "__main__":
         parsed_output = json.loads(structured_output)
         print(json.dumps(parsed_output, indent=2))
     except json.JSONDecodeError:
-        print("The model response could not be parsed as JSON. Here's the raw output:\n")
+        print(" The model response could not be parsed as JSON. Here's the raw output:\n")
         print(structured_output)
     except Exception as e:
-        print("Error while processing:", e)
+        print(" Error while processing:", e)
+
