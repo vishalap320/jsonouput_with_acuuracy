@@ -98,18 +98,18 @@ Output (structured JSON):
   }
 ]
 ```
-Setting Up the Environment (macOS & Windows)
+## Setting Up the Environment (macOS & Windows)
 Install dependencies
 Make sure Python 3.10+ is installed. You can check by running:
 
-```python
+```bash
 python --version
 ```
 If it's not installed, download and install it from:
 https://www.python.org/downloads/
 
 Clone the Repository
-```python
+```bash
 git clone https://github.com/vishal320/jsonouput_with_acuuracy.git
 cd jsonouput_with_acuuracy
 ```
@@ -117,19 +117,19 @@ cd jsonouput_with_acuuracy
 Install Required Packages
 Import necessary Python libraries:
 
-```python
+```bash
 pip install instructor pydantic python-dotenv
 ```
 Add Your Groq API Key
 Create a .env file in the root of the project and paste your actual API key:
 
-```python
+```bash
 GROQ_API_KEY=your_actual_groq_api_key_here
 ```
 You can get your Groq API key from https://console.groq.com
 
 Run the Script
-```python
+```bash
 python main.py
 ```
 ## Notes 
