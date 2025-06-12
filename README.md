@@ -110,7 +110,7 @@ https://www.python.org/downloads/
 
 Clone the Repository
 ```python
-git clone https://github.com/vishal320/LLMStructured_output1.git
+git clone https://github.com/vishal320/jsonouput_with_acuuracy.git
 cd jsonouput_with_acuuracy
 ```
 
