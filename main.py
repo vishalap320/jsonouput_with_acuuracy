@@ -3,14 +3,14 @@ import json
 from groq import Groq
 from dotenv import load_dotenv
 
-# Load .env file if it exists
+# Load environment variables from .env file
 load_dotenv()
 
-# Fetch the Groq API Key
+# Fetch Groq API key
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 if not GROQ_API_KEY:
-    raise ValueError("Missing GROQ_API_KEY! Make sure it's set in the .env file or your environment.")
+    raise ValueError("Missing GROQ_API_KEY! Make sure it's set in the .env file.")
 
 # Initialize the Groq client
 client = Groq(api_key=GROQ_API_KEY)
@@ -19,32 +19,34 @@ def generate_structured_output(user_input):
     system_prompt = """
 You are a highly precise assistant that transforms a stream-of-consciousness journal entry into a clean, structured JSON format.
 
-Guidelines:
-- Organize the journal into meaningful life categories — but only include what's relevant.
-- Extract **specific, clear thoughts** and **avoid generalizations**.
-- Capture **intentions, concerns, emotions, or physical states** accurately.
-- Create a **short title** for each grouped thought.
-- Use multiple entries per category if needed.
-- Ensure JSON is **valid, well-formatted, and clean**.
+Instructions:
+- Group thoughts into clearly defined entries.
+- Use the following format *exactly* for each entry:
+  {
+    "entry": <number>,
+    "title": "<short title>",
+    "thoughts": [
+      "Thought 1.",
+      "Thought 2."
+    ]
+  }
 
-Your response must follow **this exact format** (replace placeholders with real content):
-
+- All entries must be contained in an array under this structure:
 [
   {
     "entries": [
-      {
-        "entry": 1,
-        "title": "Example Title",
-        "thoughts": [
-          "First thought related to the topic.",
-          "Second thought expanding on it."
-        ]
-      }
+      {...}, {...}
     ]
   }
 ]
 
-Only output valid JSON — no commentary, no extra text.
+Rules:
+- Always close all brackets and quotes properly.
+- No free-floating strings.
+- No trailing commas.
+- Do not include category fields or any metadata.
+- Do not include explanations or comments—output valid JSON **only**.
+- Thought content must be extracted carefully and clearly from the journal.
 """
 
     messages = [
@@ -69,7 +71,7 @@ if __name__ == "__main__":
         parsed_output = json.loads(structured_output)
         print(json.dumps(parsed_output, indent=2))
     except json.JSONDecodeError:
-        print(" The model response could not be parsed as JSON. Here's the raw output:\n")
+        print("The model response could not be parsed as JSON. Here's the raw output:\n")
         print(structured_output)
     except Exception as e:
-        print(" Error while processing:", e)
+        print("Error while processing:", e)
