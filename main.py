@@ -17,27 +17,20 @@ client = Groq(api_key=GROQ_API_KEY)
 
 def generate_structured_output(user_input):
     system_prompt = """
-You are a highly precise assistant that transforms a stream-of-consciousness journal entry into a clean, structured JSON format. Categorize each relevant idea under these sections:
-- Health & Well-being
-- Family & Relationships
-- Work Stress
-- Community & Meaningful Work
-- Emotional State
-- Habits & Patterns
+You are a highly precise assistant that transforms a stream-of-consciousness journal entry into a clean, structured JSON format.
 
 Guidelines:
+- Organize the journal into meaningful life categories — but only include what's relevant.
 - Extract **specific, clear thoughts** and **avoid generalizations**.
 - Capture **intentions, concerns, emotions, or physical states** accurately.
 - Create a **short title** for each grouped thought.
 - Use multiple entries per category if needed.
-- Only include **categories mentioned or implied** in the journal entry.
 - Ensure JSON is **valid, well-formatted, and clean**.
 
 Your response must follow **this exact format** (replace placeholders with real content):
 
 [
   {
-    "category": "Health & Well-being",
     "entries": [
       {
         "entry": 1,
@@ -80,4 +73,3 @@ if __name__ == "__main__":
         print(structured_output)
     except Exception as e:
         print(" Error while processing:", e)
-
