@@ -12,19 +12,6 @@ The jumbled thoughts are transformed into clear, categorized insight you can use
 
 ---
 
-## Categories Used
-
-The model uses the following structure and only includes categories that are relevant to the input:
-
-- Health & Well-being  
-- Family & Relationships  
-- Work Stress  
-- Community & Meaningful Work  
-- Emotional State  
-- Habits & Patterns
-
----
-
 ## Example Input & Output
 
 Input (free-form journal entry):
@@ -36,62 +23,47 @@ Output (structured JSON):
 ```json
 [
   {
-    "category": "Work Stress",
     "entries": [
       {
         "entry": 1,
-        "title": "Nervous About Morning Meeting",
+        "title": "Restless Morning",
         "thoughts": [
-          "Meeting with Vikram sir at 9:30 sharp.",
-          "I need to sound more confident.",
-          "Concerned the meeting might run late."
-        ]
-      }
-    ]
-  },
-  {
-    "category": "Health & Well-being",
-    "entries": [
-      {
-        "entry": 1,
-        "title": "Swimming Class Prep",
-        "thoughts": [
-          "Swimming class is at 12, haven’t packed towel.",
-          "Hope the pool isn’t too cold today."
+          "I woke up a little restless\u2014too many things lined up today.",
+          "Meeting with Vikram sir at 9:30 sharp... I need to sound more confident this time.",
+          "Should I review my notes again?"
         ]
       },
       {
         "entry": 2,
-        "title": "Ankle Caution for Football",
+        "title": "Swimming Class",
         "thoughts": [
-          "I should stretch properly before football.",
-          "Ankle still sore from a previous tackle."
+          "I haven\u2019t packed my towel yet\u2014ugh.",
+          "Hope the pool isn\u2019t too cold today."
         ]
-      }
-    ]
-  },
-  {
-    "category": "Habits & Patterns",
-    "entries": [
+      },
       {
-        "entry": 1,
-        "title": "Self-Care through Food",
+        "entry": 3,
+        "title": "Lunch Plans",
         "thoughts": [
-          "Planning to have Thalapakattu biryani for lunch.",
-          "Considering treating myself to dessert."
+          "Lunch is set though\u2014Thalapakattu!",
+          "I\u2019ve been craving that biryani all week.",
+          "Maybe I\u2019ll treat myself to a dessert too."
         ]
-      }
-    ]
-  },
-  {
-    "category": "Emotional State",
-    "entries": [
+      },
       {
-        "entry": 1,
-        "title": "Overwhelmed but Hopeful",
+        "entry": 4,
+        "title": "Football",
         "thoughts": [
-          "Woke up restless due to packed day.",
-          "It’ll be a good day if I pace myself."
+          "Later in the evening, football with the guys\u2014I missed last week\u2019s game, so I better show up today.",
+          "I should stretch properly this time\u2014my ankle still remembers that rough tackle from last month."
+        ]
+      },
+      {
+        "entry": 5,
+        "title": "Pacing Myself",
+        "thoughts": [
+          "So many moving pieces, but it\u2019ll be a good day if I just pace myself.",
+          "Just need to get through that first meeting without zoning out."
         ]
       }
     ]
