@@ -26,43 +26,41 @@ Output (structured JSON):
     "entries": [
       {
         "entry": 1,
-        "title": "Restless Morning",
+        "title": "Meeting with Vikram sir at 9:30 am",
         "thoughts": [
-          "I woke up a little restless\u2014too many things lined up today.",
-          "Meeting with Vikram sir at 9:30 sharp... I need to sound more confident this time.",
-          "Should I review my notes again?"
+          "Need to sound more confident this time.",
+          "Should review my notes again to feel prepared."
         ]
       },
       {
         "entry": 2,
-        "title": "Swimming Class",
+        "title": "Swimming class at 12 pm",
         "thoughts": [
-          "I haven\u2019t packed my towel yet\u2014ugh.",
-          "Hope the pool isn\u2019t too cold today."
+          "Haven't packed my towel yet, need to remember that.",
+          "Hope the pool isn't too cold today."
         ]
       },
       {
         "entry": 3,
-        "title": "Lunch Plans",
+        "title": "Lunch at Thalapakattu",
         "thoughts": [
-          "Lunch is set though\u2014Thalapakattu!",
-          "I\u2019ve been craving that biryani all week.",
-          "Maybe I\u2019ll treat myself to a dessert too."
+          "I've been craving that biryani all week.",
+          "Maybe I'll treat myself to a dessert too."
         ]
       },
       {
         "entry": 4,
-        "title": "Football",
+        "title": "Football with the guys in the evening",
         "thoughts": [
-          "Later in the evening, football with the guys\u2014I missed last week\u2019s game, so I better show up today.",
-          "I should stretch properly this time\u2014my ankle still remembers that rough tackle from last month."
+          "I missed last week's game, so I better show up today.",
+          "I should stretch properly this time, my ankle still remembers that rough tackle from last month."
         ]
       },
       {
         "entry": 5,
-        "title": "Pacing Myself",
+        "title": "General anxiety about the day",
         "thoughts": [
-          "So many moving pieces, but it\u2019ll be a good day if I just pace myself.",
+          "So many moving pieces, but it'll be a good day if I just pace myself.",
           "Just need to get through that first meeting without zoning out."
         ]
       }
