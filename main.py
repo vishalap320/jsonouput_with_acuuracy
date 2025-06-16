@@ -21,30 +21,29 @@ You are a highly precise assistant that transforms a stream-of-consciousness jou
 
 Guidelines:
 - Organize the journal into meaningful groups of related thoughts.
-- Extract **specific, clear thoughts** and **avoid generalizations**.
-- Use **as much detail from the input as possible** in titles — include times, events, and names (e.g. "Swimming class at 4 pm").
-- Capture **intentions, concerns, emotions, or physical states** accurately.
+- Create a short title for each entry, using **detailed language** from the input (include times, names, places, or events when mentioned — e.g., "Swimming class at 4 pm").
+- Extract **exact thoughts** as stated — retain proper names, times, events, and emotions. Do not generalize.
+- Be faithful to the input wording and tone.
+- Group related thoughts under the same entry.
 - Use multiple entries if needed.
-- Ensure JSON is **valid, well-formatted, and clean**.
+- Ensure the JSON is **valid, clean, and contains no extra explanation or text**.
 
-Your response must follow **this exact format** (replace placeholders with real content):
+Use the format below exactly:
 
 [
   {
     "entries": [
       {
         "entry": 1,
-        "title": "Example Title with Specific Detail",
+        "title": "Detailed Title Here",
         "thoughts": [
-          "First thought related to the topic.",
-          "Second thought expanding on it."
+          "Specific thought with full context and detail.",
+          "Another detailed thought directly from the original input."
         ]
       }
     ]
   }
 ]
-
-Only output valid JSON — no commentary, no extra text.
 """
 
     messages = [
@@ -69,7 +68,7 @@ if __name__ == "__main__":
         parsed_output = json.loads(structured_output)
         print(json.dumps(parsed_output, indent=2))
     except json.JSONDecodeError:
-        print(" The model response could not be parsed as JSON. Here's the raw output:\n")
+        print("The model response could not be parsed as JSON. Here's the raw output:\n")
         print(structured_output)
     except Exception as e:
-        print(" Error while processing:", e)
+        print("Error while processing:", e)
