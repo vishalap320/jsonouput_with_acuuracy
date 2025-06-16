@@ -14,7 +14,7 @@ The jumbled thoughts are transformed into clear, categorized insight you can use
 
 ## Example Input & Output
 
-Input (free-form journal entry):
+Input (free-form journal entry) :
 ```bash
 I woke up a little restless—too many things lined up today. Meeting with Vikram sir at 9:30 sharp... I need to sound more confident this time. Should I review my notes again? It’s supposed to end by 10:25, but what if it runs late? I’ll barely have time to breathe before swimming class at 12. I haven’t packed my towel yet—ugh. Hope the pool isn’t too cold today. Lunch is set though—Thalapakattu! I’ve been craving that biryani all week. Maybe I’ll treat myself to a dessert too. Later in the evening, football with the guys—I missed last week’s game, so I better show up today. I should stretch properly this time—my ankle still remembers that rough tackle from last month. So many moving pieces, but it’ll be a good day if I just pace myself. Just need to get through that first meeting without zoning out.
 ```
