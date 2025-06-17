@@ -26,43 +26,18 @@ Output (structured JSON):
     "entries": [
       {
         "entry": 1,
-        "title": "Meeting with Vikram sir at 9:30 am",
-        "thoughts": [
-          "Need to sound more confident this time.",
-          "Should review my notes again to feel prepared."
-        ]
+        "title": "Meeting with Vikram sir at 9:30",
+        "description": "I need to sound more confident and review my notes again to ensure the meeting goes smoothly and ends on time at 10:25."
       },
       {
         "entry": 2,
-        "title": "Swimming class at 12 pm",
-        "thoughts": [
-          "Haven't packed my towel yet, need to remember that.",
-          "Hope the pool isn't too cold today."
-        ]
+        "title": "Swimming class at 12 PM",
+        "description": "I need to pack my towel and hope the pool isn't too cold, but I'm looking forward to lunch at Thalapakattu afterwards."
       },
       {
         "entry": 3,
-        "title": "Lunch at Thalapakattu",
-        "thoughts": [
-          "I've been craving that biryani all week.",
-          "Maybe I'll treat myself to a dessert too."
-        ]
-      },
-      {
-        "entry": 4,
         "title": "Football with the guys in the evening",
-        "thoughts": [
-          "I missed last week's game, so I better show up today.",
-          "I should stretch properly this time, my ankle still remembers that rough tackle from last month."
-        ]
-      },
-      {
-        "entry": 5,
-        "title": "General anxiety about the day",
-        "thoughts": [
-          "So many moving pieces, but it'll be a good day if I just pace myself.",
-          "Just need to get through that first meeting without zoning out."
-        ]
+        "description": "I missed last week's game, so I better show up today and stretch properly to avoid another ankle injury from a rough tackle."
       }
     ]
   }
