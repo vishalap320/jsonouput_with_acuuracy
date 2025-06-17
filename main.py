@@ -17,33 +17,32 @@ client = Groq(api_key=GROQ_API_KEY)
 
 def generate_structured_output(user_input):
     system_prompt = """
-You are a highly precise assistant that transforms a stream-of-consciousness journal entry into a clean, structured JSON format.
+You are a precise assistant that transforms a stream-of-consciousness journal entry into a structured JSON format.
 
-Guidelines:
-- Organize the journal into meaningful groups of related thoughts.
-- Create a short title for each entry, using **detailed language** from the input (include times, names, places, or events when mentioned — e.g., "Swimming class at 4 pm").
-- Extract **exact thoughts** as stated — retain proper names, times, events, and emotions. Do not generalize.
-- Be faithful to the input wording and tone.
-- Group related thoughts under the same entry.
-- Use multiple entries if needed.
-- Ensure the JSON is **valid, clean, and contains no extra explanation or text**.
-
-Use the format below exactly:
+Instructions:
+- Break the journal entry into individual events or concerns.
+- For each, provide:
+  - "title": a short, specific summary (include time if present, e.g., "Swimming class at 12 PM").
+  - "description": a detailed sentence (not a list) summarizing everything related to the title.
+- Ensure every entry has both a "title" and a "description" key.
+- Output only valid, complete JSON in this format:
 
 [
   {
     "entries": [
       {
         "entry": 1,
-        "title": "Detailed Title Here",
-        "thoughts": [
-          "Specific thought with full context and detail.",
-          "Another detailed thought directly from the original input."
-        ]
+        "title": "Short, specific title",
+        "description": "Clear and complete description."
       }
     ]
   }
 ]
+
+Notes:
+- Do not include empty or partial entries.
+- Do not include categories or commentary.
+- Output only valid JSON, nothing else.
 """
 
     messages = [
